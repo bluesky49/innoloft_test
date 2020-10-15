@@ -1,0 +1,107 @@
+$mobile: 1000px;
+
+@mixin font($font, $size, $height: 1, $color: #33375a) {
+  font-family: "Avenir Next Medium", sans-serif;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+
+  @if $font == Bold {
+    font-family: "Avenir Next Bold", sans-serif;
+  }
+  @if $font == Medium {
+    font-family: "Avenir Next Medium", sans-serif;
+  }
+}
+
+.nav {
+  margin: 50px 0;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.nav .ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  background: none;
+}
+
+.nav .ul li {
+  display: block;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.nav a {
+  display: block;
+  text-decoration: none;
+
+  @include font(Bold, 24px, 64px, #33375a);
+}
+
+.nav a:hover {
+  background-color: #ef2569;
+  border-radius: 15px;
+  @include font(Bold, 24px, 64px, #fff);
+}
+
+/* Hide Dropdowns by Defa.ult */
+.nav .ul .ul {
+  display: none;
+  position: static;
+  width: 100%;
+  right: -50px;
+}
+
+/* Display Dropdowns on Hover */
+.nav .ul li:hover > .ul {
+  display: block;
+}
+
+/* Fisrt Tier Dropdown */
+.nav .ul .ul li {
+  float: none;
+  display: block;
+  position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+.nav .ul .ul .ul li {
+  position: relative;
+}
+
+li > a:only-child:after {
+  content: "";
+  list-style: none;
+}
+.nested {
+  padding-left: 50px !important;
+}
+.subnested {
+  padding-left: 70px !important;
+}
+.nav span {
+  @include font(Bold, 20px, 35px, #000);
+}
+.nested span {
+  @include font(Regular, 18px, 35px, #000);
+}
+.subnested span {
+  @include font(Regular, 15px, 35px, #000);
+}
+.navmobile {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 400px;
+  padding : 50px;
+  li {
+    list-style-type: none;
+    padding: 20px;
+    font-size: 18px;
+    a {
+      text-decoration: none;
+    }
+  }
+}

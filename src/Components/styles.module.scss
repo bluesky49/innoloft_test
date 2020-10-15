@@ -1,0 +1,226 @@
+$desktop: 991px;
+$tablet:  767px;
+$phone: 479px; 
+
+.header {
+  height: 100px;
+  // position: fixed;
+  background-image: linear-gradient(to right,#dbe05f, #89ae61, #2c7760);
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  .logo, .setting {
+    padding-top: 35px;
+    img {
+      margin-left: 40px;
+    }
+  }
+}
+.contentWrapper {
+  padding: 50px;
+  display: flex;
+}
+.sidebar{
+  max-width: 300px;
+  width: auto;
+  margin: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  justify-content: space-between;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    padding: 20px;
+  }
+  li:hover{ 
+    background-color: #dddddd;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  img {
+    padding-right: 20px;
+  }
+}
+.profileWrapper {
+  width: 800px;
+  background-color: #fff;
+  margin-left: 15%;
+  font-family: 'Courier New', Courier, monospace;
+  form {
+    margin-top: 100px;
+  }
+  button {
+    height: 50px;
+    width: 200px;
+    border-radius: 20px;
+    outline: none;
+    margin: 50px auto;
+  }
+}
+.tab_list_item {
+  display: inline-block;
+  list-style: none;
+  padding: 0.5rem 0.75rem;
+  background-color: #ccc;
+  width: 50%;
+  cursor: pointer;
+}
+.tab_list_active {
+  background-color: #fff;
+}
+.tab_list {
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  font-size: 25px;
+}
+.settingWrapper {
+  display: grid;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  .setting {
+    margin: auto;
+    img {
+      vertical-align: middle;
+    }
+    select {
+      width: 424px;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      outline: none;
+    }
+  }
+  input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    width: 400px;
+  }
+}
+.err {
+  color: red;
+  margin: auto;
+  -moz-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 3s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.indicator {
+  text-align: center;
+}
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      overflow:hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}
+.toggle {
+  display: none;
+}
+@media screen and (max-width: $desktop) {
+  .settingWrapper{
+    input {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+  }
+  .sidebar {
+    display: none;
+  }
+  .toggle {
+    height: 30px;
+    margin-top: 34px;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: inline;  
+  }
+  .setting img {
+    display: none;
+  }
+  .profileWrapper {
+    margin: auto;
+  }
+}
+@media screen and (max-width: $tablet) {
+  .settingWrapper{
+    input {
+      width: 300px;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+    .setting select {
+      width: 324px;
+    }
+  }
+  
+}
+@media screen and (max-width: $phone) {
+  .settingWrapper{
+    input {
+      width: 150px;
+    }
+    button {
+      width: 150px;
+    }
+  }
+  .tab_list {
+    font-size: 18px;
+  }
+  .settingWrapper .setting select {
+    width: 174px;
+  }
+  
+}
+@media screen and (max-width: 320px) {
+  .profileWrapper {
+    width: 100%;
+  }
+  .header {
+    padding: 0 20px;
+  }
+  .settingWrapper{
+    input {
+      width: 80px;
+    }
+    button {
+      width: 100px;
+    }
+  }
+  .tab_list {
+    font-size: 12px;
+  }
+  .tab_list_item {
+    padding: 1px;
+  }
+  .settingWrapper .setting select {
+    width: 124px;
+  }
+  .header .logo img {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  body {
+    display: none;
+  }
+}
